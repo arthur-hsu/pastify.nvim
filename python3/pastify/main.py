@@ -103,5 +103,5 @@ class Pastify(object):
 
         result = re.escape(loads(output.decode('utf-8'))
                            ['data']['url']).replace('/', r'\/')
-
-        vim.command(f"%s/{placeholder_text}/{result}/g")
+        try: vim.command(f"%s/{placeholder_text}/{result}/g")
+        except: pass
